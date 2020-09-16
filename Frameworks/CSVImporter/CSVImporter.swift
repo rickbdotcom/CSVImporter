@@ -393,3 +393,11 @@ extension String {
         return NSRange(location: 0, length: self.utf16.count)
     }
 }
+
+private extension Dictionary {
+    init?(keys: [Key], values: [Value]) {
+    //    guard keys.count == values.count else { return nil }
+        self.init()
+        for (index, key) in keys.enumerated() { self[key] = values[index] }
+    }
+}
